@@ -1,8 +1,7 @@
 <?php
 echo "Hello Corona";
 
-<ul>
 
-<li>
+echo "dal radi ovo";
 
  ?>
