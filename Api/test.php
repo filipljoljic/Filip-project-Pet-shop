@@ -9,12 +9,12 @@ $owner_dao = new OwnerDao();
 
 $owner1 =[
 "Name"=>"Adi",
-"email"=>"nesto@gmail.com",
+"email"=>"Adi.Hadziomerovic@stu.ibu.edu.ba",
 "Address"=>"nesto",
 "Age"=>"12",
  "accountId"=> 10
 ];
-$owner = $owner_dao->add_user($owner1);
+$owner = $owner_dao->update_owner(5, $owner1);
 
 print_r($owner);
 //print_r($owner);

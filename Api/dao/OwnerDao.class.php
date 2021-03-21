@@ -15,15 +15,23 @@ class OwnerDao extends BaseDao{
   return $this->query_unique("SELECT * FROM owner WHERE id=:id",["id"=>@id]);
 }
 
-  public function add_user($owner){
+  public function add_owner($owner){
   $insert="";
   $sql = "INSERT INTO owner ( Name, email, Address, Age, accountId) VALUES ( :Name, :email, :Address, :Age, :accountId)";
 $stmt= $this->connection->prepare($sql);
 $stmt->execute($owner);
 $owner['id'] = $this->connection->lastInsertId();
 return $owner;
+}
+
+public function update_owner($id, $owner){
+  $sql = "UPDATE owner SET Name = :Name, email = :email, Address = :Address, Age=:Age, accountId=:accountId WHERE id=:id";
+$stmt= $this->connection->prepare($sql);
+$owner['id']=$id;
+$stmt->execute($owner);
 
 }
+
 }
 
 
