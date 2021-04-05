@@ -25,17 +25,10 @@ return $owner;
 }
 
 public function update_owner($id, $owner){
-  $query= "UPDATE owner SET ";
-  foreach ($owner as $name => $value) {
-    $query .= $name ."= :". $name. ", ";
-  }
-  $query = substr($query, 0, -2);
-  $query .= " WHERE id = :id";
-
-$stmt= $this->connection->prepare($query);
-$owner['id']=$id;
-$stmt->execute($owner);
-
+  $this->update("owner", $id, $owner);
+}
+public function update_owner_by_email($email, $owner){
+  $this->update("owner", $email, $owner, "email");
 }
 
 }
