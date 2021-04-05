@@ -1,4 +1,4 @@
-<?php
+ <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -25,8 +25,14 @@ return $owner;
 }
 
 public function update_owner($id, $owner){
-  $sql = "UPDATE owner SET Name = :Name, email = :email, Address = :Address, Age=:Age, accountId=:accountId WHERE id=:id";
-$stmt= $this->connection->prepare($sql);
+  $query= "UPDATE owner SET ";
+  foreach ($owner as $name => $value) {
+    $query .= $name ."= :". $name. ", ";
+  }
+  $query = substr($query, 0, -2);
+  $query .= " WHERE id = :id";
+
+$stmt= $this->connection->prepare($query);
 $owner['id']=$id;
 $stmt->execute($owner);
 
