@@ -16,17 +16,13 @@ class OwnerDao extends BaseDao{
 }
 
   public function add_owner($owner){
-  $insert="";
-  $sql = "INSERT INTO owner ( Name, email, Address, Age, accountId) VALUES ( :Name, :email, :Address, :Age, :accountId)";
-$stmt= $this->connection->prepare($sql);
-$stmt->execute($owner);
-$owner['id'] = $this->connection->lastInsertId();
-return $owner;
+return $this->insert("owner", $owner);
 }
 
 public function update_owner($id, $owner){
   $this->update("owner", $id, $owner);
 }
+
 public function update_owner_by_email($email, $owner){
   $this->update("owner", $email, $owner, "email");
 }

@@ -8,16 +8,22 @@ $owner_dao = new OwnerDao();
 //$owner = $owner_dao->get_owner_by_email("filipljoljic2000@gmail.com");
 
 $owner1 =[
-
-"Address"=>"paromlin 45"
+"Name"=>"Ahmed becirevic",
+"Age"=>"21",
+"email"=>"ahmed12345@gmail.com",
+"Address"=>"nedzarici nesto",
+"accountId"=>"21"
 
 
 ];
 
 
-$owner = $owner_dao->update_owner_by_email("Adi.pacotti@stu.ibu.edu.ba", $owner1);
 
-print_r($owner);
+
+
+$owner = $owner_dao->add_owner($owner1);
+
+print_r($owner1);
 
 
  ?>
