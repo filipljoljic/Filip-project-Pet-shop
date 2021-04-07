@@ -8,7 +8,7 @@ require_once dirname(__FILE__)."/dao/AccountDao.class.php";
 
 $dao = new AccountDao();
 
-$dao->add_account([
+$dao->add([
   "name" => "Filip Ljoljic",
   "created_at" => date("2021-03-15 11:45:32")
 ]);
