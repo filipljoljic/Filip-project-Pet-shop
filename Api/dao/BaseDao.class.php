@@ -58,9 +58,9 @@ protected function query($query, $params){
 }
 
 protected function query_unique($query, $params){
-$result = $this->query($query, $params);
-return reset($result);
-}
+  $result = $this->query($query, $params);
+  return reset($result);
+  }
 public function add($entity){
   return $this->insert($this->table, $entity);
 }
@@ -70,7 +70,7 @@ public function update($id, $entity){
 }
 
 public function get_by_id($id){
-  return $this->query_unique("SELECT * FROM ${$this->table} WHERE id= :id",["id"=>$id]);
+  return $this->query_unique("SELECT * FROM ".$this->table." WHERE id= :id",["id"=>$id]);
 }
 
 
