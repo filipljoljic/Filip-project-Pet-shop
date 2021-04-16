@@ -4,9 +4,18 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once dirname(__FILE__)."/dao/BaseDao.class.php";
+require dirname(__FILE__).'/../vendor/autoload.php';
 
-$filip = new BaseDao();
+//die('this request was sent to the index.php file');
 
-echo "Hello API";
+
+Flight::route('/', function(){
+  echo 'Hello world!';
+});
+
+Flight::route('/cao', function(){
+  echo 'Hello world2!';
+});
+
+Flight::start();
  ?>
