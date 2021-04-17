@@ -10,7 +10,7 @@ require dirname(__FILE__).'/../vendor/autoload.php';
 
 
 Flight::route('/', function(){
-  echo 'Hello world!';
+  echo 'Hello world!!!!!!!!';
 });
 
 Flight::route('/cao', function(){
@@ -18,4 +18,5 @@ Flight::route('/cao', function(){
 });
 
 Flight::start();
+
  ?>
