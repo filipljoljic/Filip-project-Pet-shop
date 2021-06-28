@@ -15,6 +15,8 @@ Flight::route('/', function(){
 
 Flight::route('/cao', function(){
   echo 'Hello world2!';
+
+  
 });
 
 Flight::start();
